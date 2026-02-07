@@ -9,6 +9,3 @@ for x in m:
     else:
         print("Yes")
         seen.add(x)
-
-
-
