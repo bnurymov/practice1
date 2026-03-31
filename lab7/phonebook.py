@@ -52,6 +52,8 @@ def read():
     elif(aors == "all"):
         cur.execute("SELECT * FROM contacts")
         rows = cur.fetchall()
+        if not rows:
+            print("No contact")
         for row in rows:
             print(f"Name: {row[0]} | Number: {row[1]}")
 
