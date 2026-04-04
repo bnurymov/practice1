@@ -61,18 +61,20 @@ def update():
     norn = input("Name or number: ")
     if(norn.isdigit() or "+" in norn):
         new_name = input("New name: ")
-        new_number = input("new number: ")
+        new_number = input("New number: ")
         cur.execute(
             "UPDATE contacts SET name=%s, number=%s WHERE number=%s",
-            (new_name, new_number, number)
+            (new_name, new_number, norn)
         )
+        print("Number updated")
     else:
         new_name = input("New name: ")
         new_number = input("new number: ")
         cur.execute(
             "UPDATE contacts SET name=%s, number=%s WHERE name=%s",
-            (new_name, new_number, name)
+            (new_name, new_number, norn)
         )
+        print("Number updated")
     conn.commit()
     print("Contact updated")
 
